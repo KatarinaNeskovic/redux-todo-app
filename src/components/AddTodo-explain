@@ -1,0 +1,37 @@
+1. addTodo Action Creator: It’s a function that returns an action object to add a todo.
+2. mapDispatchToProps = { addTodo }:
+ This tells Redux to provide the addTodo action creator to the AddTodo component.
+react-redux will automatically wrap addTodo with dispatch(), making it easier to use.
+3. connect(null, mapDispatchToProps)(AddTodo):
+Connects the addTodo function (now a prop) to the AddTodo component.
+Inside the AddTodo component, addTodo can be called just like any other function (addTodo(text)), but under the hood, it dispatches the action.
+
+const mapDispatchToProps = (dispatch) => ({
+  addTodo: (text) => dispatch(addTodo(text)),
+});
+
+SAME AS 
+
+const mapDispatchToProps = {addToDo}
+
+
+ADDITIONAL EXPLANATION:
+const mapDispatchToProps = { addTodo };
+export default connect(null, mapDispatchToProps)(AddTodo);
+
+This line is saying that we want to make the addTodo action creator available as a prop in our AddTodo component.
+By passing { addTodo } to connect, react-redux does something important—it binds the action creator to dispatch for you.
+
+What Does connect Do Here?
+
+- The connect function takes mapDispatchToProps and provides the component (AddTodo) with the action creator as a prop.
+- When the component receives addTodo as a prop, it is no longer just the action creator but is now a function that will dispatch that action.
+
+Relationship Between the Two addTodo Versions:
+
+The action creator addTodo defined in actions.js is used to create action objects:
+
+{ type: ADD_TODO, payload: { text } }
+The addTodo prop in the AddTodo component is actually a wrapped version of the action creator.
+When you call addTodo(text) in the component, you are not just creating the action object.
+Instead, you are dispatching the action to the Redux store automatically.
