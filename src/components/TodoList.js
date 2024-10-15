@@ -2,15 +2,16 @@ import React from "react";
 import { connect } from "react-redux";
 import TodoItem from "./TodoItem";
 import { clearAllTodos } from "../store/actions";
+import './TodoList.css'
 
 function TodoList({ todos, clearAllTodos }) {
   return (
-    <> 
-    <ul>
+    <div className="todo-list-container"> 
+    <ul className='todo-list'>
       {todos && todos.map((todo) => <TodoItem key={todo.id} todo={todo} />)}
     </ul>
-    <button onClick={clearAllTodos}> Clear All </button>
-    </>
+    <button onClick={clearAllTodos} className="clear-todo-button"> Clear All </button>
+    </div>
   );
 }
 
@@ -32,7 +33,7 @@ const mapStateToProps = (state) => ({
   }
 
   export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
-  /* mapStateToProps connects the Redux store to the TodoList component.
+  /* mapStateToProps connects the Redux store to the TodoList component.It gets todos from the Redux state.
   The state parameter represents the current state of the Redux store (an array of todos).
   The return value { todos: state } maps this state to the todos prop of the TodoList component.
   This means TodoList always has the most up-to-date list of todos from the Redux store, ensuring that UI and state are always in sync. */

@@ -1,0 +1,8 @@
+
+1. Rendering the Todo List: mapStateToProps grabs the state (todos array) and passes it to TodoList as the prop todos.
+This allows TodoList to render an up-to-date list of all todo items.
+
+2. Clearing All Todos: When the "Clear All Todos" button is clicked, the clearAllTodos action (provided via mapDispatchToProps) is dispatched.
+The todoReducer receives this action and updates the state to be an empty array ([]), effectively clearing all the todo items.
+Since the state is updated, mapStateToProps runs again, providing the updated state (now an empty array) to the TodoList.
+TodoList re-renders, and since todos is now an empty array, the list is cleared on the screen.

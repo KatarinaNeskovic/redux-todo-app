@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { toggleTodo, editTodo, deleteTodo } from "../store/actions";
+import './TodoItem.css'
 
 const TodoItem = ({ todo, toggleTodo, editTodo, deleteTodo }) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -35,8 +36,8 @@ const TodoItem = ({ todo, toggleTodo, editTodo, deleteTodo }) => {
   };
 
   return (
-    <li>
-      <input type="checkbox" checked={todo.completed} onChange={handleToggle} />
+    <li className="todo-item">
+      <input type="checkbox" checked={todo.completed} onChange={handleToggle} className="todo-checkbox" />
       {!isEditing && (
         <>
           <span
@@ -45,18 +46,18 @@ const TodoItem = ({ todo, toggleTodo, editTodo, deleteTodo }) => {
             {todo.text}
           </span>
 
-          <button onClick={handleEdit}>Edit</button>
+          <span className="todo-action" onClick={handleEdit}>Edit</span>
         </>
       )}
 
       {isEditing && (
         <>
-          <input type="text" value={editText} onChange={handleEditChange} />
-          <button onClick={handleSave}>Save</button>
-          <button onClick={handleCancel}>Cancel</button>
+          <input type="text" value={editText} onChange={handleEditChange} className="edit-todo-input"/>
+          <span className='todo-action' onClick={handleSave}>Save </span>
+          <span className='todo-action' onClick={handleCancel}>Cancel</span>
         </>
       )}
-      <button onClick={handleDelete}>Delete</button>
+      <span span className='todo-action' onClick={handleDelete}>Delete</span>
     </li>
   );
 };

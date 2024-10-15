@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { addTodo } from '../store/actions';
+import './AddTodo.css'
 
 //neki props su delovi stanja Redux store-a a neki su akcije kojima se menja to stanje
 const AddTodo = (props) => {
@@ -20,14 +21,15 @@ const sendActionTodo = props.sendActionTodo
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="add-todo-form">
       <input
+      className='todo-input'
         type="text"
         value={text}
         onChange={handleChange}
         placeholder="Enter a new task"
       />
-      <button type="submit">Add</button>
+      <button type="submit" className="add-todo-button">ADD</button>
     </form>
   );
 };
