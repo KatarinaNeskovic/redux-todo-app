@@ -2,8 +2,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
     background-color: #ffffff;
-    padding: 15px;
+    padding: 10px;
     border-radius: 16px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 10px; 
@@ -11,7 +12,7 @@
   }
   
   .todo-checkbox {
-    margin-right: 10px;
+    margin-right: 5px;
   }
 
   .todo-action {
@@ -23,6 +24,22 @@
   
   .todo-action:hover {
     text-decoration: underline; /* Adds an underline on hover to indicate a link */
+  }
+
+  .todo-text {
+    flex-grow: 1; /* Ensures the text takes available space */
+    margin: 0 10px;
+    white-space: nowrap; /* Prevents text from breaking into multiple lines */
+    overflow: hidden; /* Hides any overflow text */
+    text-overflow: ellipsis; /* Adds "..." to overflow text */
+  }
+
+  .edit-input {
+    flex-grow: 1;
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
   }
   
   /* .edit-todo-input {

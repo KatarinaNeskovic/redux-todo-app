@@ -41,6 +41,7 @@ const TodoItem = ({ todo, toggleTodo, editTodo, deleteTodo }) => {
       {!isEditing && (
         <>
           <span
+          className="todo-text"
             style={{ textDecoration: todo.completed ? "line-through" : "none" }}
           >
             {todo.text}
@@ -52,7 +53,7 @@ const TodoItem = ({ todo, toggleTodo, editTodo, deleteTodo }) => {
 
       {isEditing && (
         <>
-          <input type="text" value={editText} onChange={handleEditChange} className="edit-todo-input"/>
+          <input type="text" value={editText} onChange={handleEditChange} className="edit-input"/>
           <span className='todo-action' onClick={handleSave}>Save </span>
           <span className='todo-action' onClick={handleCancel}>Cancel</span>
         </>
