@@ -18,7 +18,8 @@ function todoReducer(state = initialState, action) {
       return state.map((todo) => 
         todo.id === action.payload.id? { ...todo, completed: !todo.completed }
           : todo
-        /* if the id matches the action id, return the list of todos and for the specific one change the completed status (toggle it). If not, return the unchanged todo
+        /* if the id matches the action id, return the list of todos and for the specific one change the completed status (toggle it).
+        If not, return the unchanged todo
          */
       );
 

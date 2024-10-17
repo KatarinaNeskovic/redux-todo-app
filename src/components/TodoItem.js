@@ -58,7 +58,7 @@ const TodoItem = ({ todo, toggleTodo, editTodo, deleteTodo }) => {
           <span className='todo-action' onClick={handleCancel}>Cancel</span>
         </>
       )}
-      <span span className='todo-action' onClick={handleDelete}>Delete</span>
+      <span className='todo-action' onClick={handleDelete}>Delete</span>
     </li>
   );
 };
