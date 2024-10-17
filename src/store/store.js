@@ -1,4 +1,4 @@
 import {createStore} from 'redux'
-import todoReducer from './reducers'
+import todoReducer from './todoReducers'
 const store=createStore(todoReducer)
 export default store

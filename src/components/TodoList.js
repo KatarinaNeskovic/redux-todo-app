@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import TodoItem from "./TodoItem";
-import { clearAllTodos } from "../store/actions";
+import { clearAllTodos } from "../store/todoActions";
 import './TodoList.css'
 
 function TodoList({ todos, clearAllTodos }) {

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { toggleTodo, editTodo, deleteTodo } from "../store/actions";
-import './TodoItem.css'
+import { toggleTodo, editTodo, deleteTodo } from "../store/todoActions";
+import "./TodoItem.css";
 
 const TodoItem = ({ todo, toggleTodo, editTodo, deleteTodo }) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -37,28 +37,46 @@ const TodoItem = ({ todo, toggleTodo, editTodo, deleteTodo }) => {
 
   return (
     <li className="todo-item">
-      <input type="checkbox" checked={todo.completed} onChange={handleToggle} className="todo-checkbox" />
+      <input
+        type="checkbox"
+        checked={todo.completed}
+        onChange={handleToggle}
+        className="todo-checkbox"
+      />
       {!isEditing && (
         <>
           <span
-          className="todo-text"
+            className="todo-text"
             style={{ textDecoration: todo.completed ? "line-through" : "none" }}
           >
             {todo.text}
           </span>
 
-          <span className="todo-action" onClick={handleEdit}>Edit</span>
+          <span className="todo-action" onClick={handleEdit}>
+            Edit
+          </span>
         </>
       )}
 
       {isEditing && (
         <>
-          <input type="text" value={editText} onChange={handleEditChange} className="edit-input"/>
-          <span className='todo-action' onClick={handleSave}>Save </span>
-          <span className='todo-action' onClick={handleCancel}>Cancel</span>
+          <input
+            type="text"
+            value={editText}
+            onChange={handleEditChange}
+            className="edit-input"
+          />
+          <span className="todo-action" onClick={handleSave}>
+            Save{" "}
+          </span>
+          <span className="todo-action" onClick={handleCancel}>
+            Cancel
+          </span>
         </>
       )}
-      <span className='todo-action' onClick={handleDelete}>Delete</span>
+      <span className="todo-action" onClick={handleDelete}>
+        Delete
+      </span>
     </li>
   );
 };
