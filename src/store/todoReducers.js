@@ -4,7 +4,7 @@ import {
   EDIT_TODO,
   TOGGLE_TODO,
   CLEAR_ALL_TODOS,
-} from "./todoActions";
+} from "./actions";
 import { v4 as uuidv4 } from "uuid";
 
 const initialState = []; //array of todos

@@ -1,4 +1,4 @@
-// components/AddTodo.js
+
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { addTodo } from '../store/todoActions';
@@ -7,7 +7,7 @@ import './AddTodo.css'
 //neki props su delovi stanja Redux store-a a neki su akcije kojima se menja to stanje
 const AddTodo = (props) => {
   const [text, setText] = useState('');
-const sendActionTodo = props.sendActionTodo
+const sendActionTodo = props.sendActionTodo  
   const handleChange = (e) => {
     setText(e.target.value);
   };
@@ -35,7 +35,8 @@ const sendActionTodo = props.sendActionTodo
 };
 
 //kaze koji property je koja akcija
-const mapDispatchToProps = { sendActionTodo:addTodo }; 
+const mapDispatchToProps = {sendActionTodo:addTodo }; 
+
 /* When addTodo(text) is called, it will dispatch the action { type: ADD_TODO, payload: { text } } to the Redux store.
  mapDispatchToProps automatically binds the addTodo action creator to the dispatch function.
  */
