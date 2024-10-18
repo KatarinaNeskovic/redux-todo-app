@@ -17,7 +17,7 @@ export const filterAllTodos = () => {
 } */
 export const addTodo = (text) => ({
   type: ADD_TODO,
-  payload: { text }, //creating an object with text property, so that we can expand potentially in the future i.e { text, priority, dueDate }
+  payload: { text }, //creating an object with text property, so that I can expand potentially in the future i.e { text, priority, dueDate }
 });
 
 export const toggleTodo = (id) => ({

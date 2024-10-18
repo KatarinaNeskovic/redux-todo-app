@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { toggleTodo, editTodo, deleteTodo } from "../store/todoActions";
+import { toggleTodo, editTodo, deleteTodo } from "../store/actions";
 import "./TodoItem.css";
 
 const TodoItem = ({ todo, toggleTodo, editTodo, deleteTodo }) => {
