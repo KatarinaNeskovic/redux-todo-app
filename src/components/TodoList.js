@@ -3,13 +3,13 @@ import { connect } from "react-redux";
 import TodoItem from "./TodoItem";
 import { clearAllTodos } from "../store/actions";
 import "./TodoList.css";
+import { getFilteredTodos } from "../store/selectors";
 
 function TodoList({ todos, clearAllTodos }) {
   return (
     <div className="todo-list-container">
-      <ul className="todo-list">
-        {todos && todos.map((todo) => <TodoItem key={todo.id} todo={todo} />)}
-      </ul>
+      <ul className="todo-list">    
+        {todos.map((todo)=> <TodoItem key={todo.id} todo={todo}/>)} </ul>
       <button onClick={clearAllTodos} className="clear-todo-button">
         {" "}
         Clear All{" "}
@@ -18,7 +18,8 @@ function TodoList({ todos, clearAllTodos }) {
   );
 }
 
-/* UP: The todos && todos.map(...) syntax is being used to ensure that todos exists
+/* 
+ The todos && todos.map(...) syntax is being used to ensure that todos exists
  and is defined before attempting to use the .map() function on it. 
  If todos is undefined or null, trying to call .map() on it will throw an error, causing the application to crash.
  
