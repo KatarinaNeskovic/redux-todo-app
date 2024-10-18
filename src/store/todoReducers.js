@@ -9,7 +9,7 @@ import { v4 as uuidv4 } from "uuid";
 
 const initialState = []; //array of todos
 
-function todoReducer(state = initialState, action) {
+ function todoReducer(state = initialState, action) {
   switch (action.type) {
     case ADD_TODO:
       return [
@@ -41,6 +41,9 @@ function todoReducer(state = initialState, action) {
 
     case CLEAR_ALL_TODOS:
       return [];
+
+      default: 
+      return state
   }
 }
 

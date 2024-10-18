@@ -1,3 +1,5 @@
+import { SET_FILTER } from "./actions";
+
 const initialState = "SHOW_ALL";
 export function filterReducer(state = initialState, action) {
   switch (action.type) {
