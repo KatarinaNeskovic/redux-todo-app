@@ -26,7 +26,7 @@ function TodoList({ todos, clearAllTodos }) {
 });*/
 
 const mapStateToProps = (state) => ({
-  todos: state,
+  todos: getFilteredTodos(state.todos, state.filter),
 });
 /* If I want to remove the map&& above, I will use:
  const mapStateToProps = (state) => ({
@@ -38,7 +38,8 @@ const mapDispatchToProps = {
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
 
-/* mapStateToProps connects the Redux store to the TodoList component.It gets todos from the Redux state.
+/* mapStateToProps connects the Redux store to the TodoList component.
+  It gets current state from the Redux store, and tells which part of that state the component will receive as props.
   The state parameter represents the current state of the Redux store (an array of todos).
-  The return value { todos: state } maps this state to the todos prop of the TodoList component.
+  The return value { todos: ... } maps this state to the todos prop of the TodoList component.
   This means TodoList always has the most up-to-date list of todos from the Redux store, so UI and state are always in sync. */
