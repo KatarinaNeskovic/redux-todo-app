@@ -21,20 +21,12 @@ function TodoList({ todos, clearAllTodos }) {
   );
 }
 
-/* 
- The todos && todos.map(...) syntax is being used to ensure that todos exists
- and is defined before attempting to use the .map() function on it. 
- If todos is undefined or null, trying to call .map() on it will throw an error, causing the application to crash.
- 
- 
-});*/
+
 
 const mapStateToProps = (state) => ({
   todos: selectFilteredTodos(state.todos, state.filter),
 });
-/* If I want to remove the map&& above, I will use:
- const mapStateToProps = (state) => ({
-  todos: state || [], // If state is undefined or null, use an empty array */
+
 
 const mapDispatchToProps = {
   clearAllTodos,
@@ -47,3 +39,13 @@ export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
   The state parameter represents the current state of the Redux store (an array of todos).
   The return value { todos: ... } maps this state to the todos prop of the TodoList component.
   This means TodoList always has the most up-to-date list of todos from the Redux store, so UI and state are always in sync. */
+
+
+  /* 
+ The todos && todos.map(...) syntax is being used to ensure that todos exists
+ and is defined before attempting to use the .map() function on it. 
+ If todos is undefined or null, trying to call .map() on it will throw an error, causing the application to crash.
+ /* If I want to remove the map&& above, I will use:
+ const mapStateToProps = (state) => ({
+  todos: state || [], // If state is undefined or null, use an empty array */
+ 
