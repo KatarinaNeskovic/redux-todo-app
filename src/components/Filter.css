@@ -1,11 +1,12 @@
 .filter-container {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    border-radius: 16px;
   }
   
-  .filter-select {
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 1em;
+  .filter-container .filter-select {
+    padding: 5px;
+    border-radius: 16px;
+    border: 1px solid #bbb4b0;
+    font-size: 0.8em;
   }
   
