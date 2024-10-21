@@ -22,8 +22,9 @@ function TodoList({ todos, clearAllTodos }) {
 }
 
 
+//the state parameter below refers to the entire Redux state
 const mapStateToProps = (state) => ({
-  todos: selectFilteredTodos(state.todos, state.filter),
+  todos: selectFilteredTodos(state.todos, state.filter), // return value of selector function becomes todos prop for this component
 });
 
 
@@ -35,7 +36,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
 
 /* mapStateToProps connects the Redux store to the TodoList component.
   It gets current state from the Redux store, and tells which part of that state the component will receive as props.
-  The state parameter represents the current state of the Redux store (an array of todos).
+  The state parameter represents the current state of the Redux store (an array of todos and current filter).
   The return value { todos: ... } maps this state to the todos prop of the TodoList component.
   This means TodoList always has the most up-to-date list of todos from the Redux store, so UI and state are always in sync. */
 
