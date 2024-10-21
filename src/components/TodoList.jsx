@@ -22,7 +22,6 @@ function TodoList({ todos, clearAllTodos }) {
 }
 
 
-
 const mapStateToProps = (state) => ({
   todos: selectFilteredTodos(state.todos, state.filter),
 });

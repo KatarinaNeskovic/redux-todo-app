@@ -42,31 +42,5 @@
     border: 1px solid #ccc;
   }
   
-  /* .edit-todo-input {
-    flex-grow: 1;
-    padding: 10px;
-    font-size: 1em;
-    margin-right: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-  } */
-  
-/*   .edit-button, .delete-button, .save-button, .cancel-button {
-    background-color: #ff5a00;  Lieferando Orange
-    color: #fff;
-    margin-left: 5px;
-    padding: 5px 10px;
-    border-radius: 8px;
-  } 
-  
-  .delete-button {
-    background-color: #ff5a00; 
-  }
-  
-  .edit-button:hover, .delete-button:hover, .save-button:hover, .cancel-button:hover {
-    background-color: #e04f00;
-  }
-
-
-  */
+ 
   
