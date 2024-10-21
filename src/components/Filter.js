@@ -1,7 +1,8 @@
 import React from "react";
+import "./Filter.css";
 import { setFilter } from "../store/actions";
 import { connect } from "react-redux";
-import "/Filter.css";
+
 
 const Filter = ({ setFilter }) => {
   const handleFilterChange = (e) => {
