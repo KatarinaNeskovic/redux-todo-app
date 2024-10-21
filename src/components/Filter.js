@@ -20,7 +20,7 @@ const Filter = ({ setFilter }) => {
 };
 
 const mapDispatchToProps = {
-  setFilter,
+  setFilter
 };
 
 export default connect(null, mapDispatchToProps)(Filter);

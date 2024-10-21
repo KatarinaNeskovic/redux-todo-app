@@ -1,0 +1,6 @@
+
+Redux apps should keep the Redux state minimal, and derive additional values from that state whenever possible.
+
+This includes things like calculating filtered lists or summing up values. As an example, a todo app would keep an original list of todo objects in state, but derive a filtered list of todos outside the state whenever the state is updated.
+
+This is why my filter reducer and my filter action is only pertaining to setting the state of filters,but are not mutating in any way the state of todos. State of todos is only modified via todos reducers based on defined actions.

@@ -1,4 +1,4 @@
-export const getFilteredTodos = (todos, filter) => {
+export const selectFilteredTodos = (todos, filter) => {
   switch (filter) {
     case "SHOW_COMPLETED":
       return todos.filter((todo) => todo.completed);

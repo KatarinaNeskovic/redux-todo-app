@@ -3,13 +3,16 @@ import { connect } from "react-redux";
 import TodoItem from "./TodoItem";
 import { clearAllTodos } from "../store/actions";
 import "./TodoList.css";
-import { getFilteredTodos } from "../store/selectors";
+import { selectFilteredTodos } from "../store/selectors";
 
 function TodoList({ todos, clearAllTodos }) {
   return (
     <div className="todo-list-container">
-      <ul className="todo-list">    
-        {todos.map((todo)=> <TodoItem key={todo.id} todo={todo}/>)} </ul>
+      <ul className="todo-list">
+        {todos.map((todo) => (
+          <TodoItem key={todo.id} todo={todo} />
+        ))}{" "}
+      </ul>
       <button onClick={clearAllTodos} className="clear-todo-button">
         {" "}
         Clear All{" "}
@@ -27,7 +30,7 @@ function TodoList({ todos, clearAllTodos }) {
 });*/
 
 const mapStateToProps = (state) => ({
-  todos: getFilteredTodos(state.todos, state.filter),
+  todos: selectFilteredTodos(state.todos, state.filter),
 });
 /* If I want to remove the map&& above, I will use:
  const mapStateToProps = (state) => ({
