@@ -10,7 +10,7 @@ function TodoList({ todos, clearAllTodos }) {
     <div className="todo-list-container">
       <ul className="todo-list">
         {todos.map((todo) => (
-          <TodoItem key={todo.id} todo={todo} />
+          <TodoItem key={todo.id} todo={todo} /> // react always needs a unique key when rendering lists!
         ))}{" "}
       </ul>
       <button onClick={clearAllTodos} className="clear-todo-button">
@@ -42,6 +42,8 @@ export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
 
 
   /* 
+ REMINDER - In case i am not doing filtering, former syntax:
+ 
  The todos && todos.map(...) syntax is being used to ensure that todos exists
  and is defined before attempting to use the .map() function on it. 
  If todos is undefined or null, trying to call .map() on it will throw an error, causing the application to crash.
