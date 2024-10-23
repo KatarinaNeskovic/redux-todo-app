@@ -1,9 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import { clearAllTodos } from "../../store/actions";
-import "./TodoList.css";
+import "./todo-list.css";
 import { selectFilteredTodos } from "../../store/selectors";
-import { TodoList } from "./TodoList";
+import { TodoList } from "./todo-list";
 
 
 const mapStateToProps = (state) => ({

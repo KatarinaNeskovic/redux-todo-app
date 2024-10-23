@@ -1,8 +1,8 @@
 
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { addTodo } from '../store/actions';
-import './AddTodo.css'
+import { addTodo } from '../../store/actions';
+import './add-todo.css'
 
 //neki props su delovi stanja Redux store-a a neki su akcije kojima se menja to stanje
 const AddTodo = (props) => {

@@ -1,6 +1,6 @@
 import React from "react";
-import AddTodo from "./components/AddTodo";
-import { TodoList } from "./components/TodoList";
+import AddTodo from "./components/add-todo/add-todo";
+import { TodoList } from "./components/todo-list";
 import "./App.css";
 import Filter from "./components/Filter";
 
