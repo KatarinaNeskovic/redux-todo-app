@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { connect } from "react-redux";
-import { toggleTodo, editTodo, deleteTodo } from "../store/actions";
-import "./TodoItem.css";
+import "./todo-item.css";
 
 const TodoItem = ({ todo, toggleTodo, editTodo, deleteTodo }) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -81,10 +79,4 @@ const TodoItem = ({ todo, toggleTodo, editTodo, deleteTodo }) => {
   );
 };
 
-const mapDispatchToProps = {
-  toggleTodo,
-  editTodo,
-  deleteTodo,
-};
-
-export default connect(null, mapDispatchToProps)(TodoItem);
+export {TodoItem}
