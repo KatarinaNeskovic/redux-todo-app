@@ -7,14 +7,6 @@ export const SET_FILTER = 'SET_FILTER'
 
 //setting action creators
 
-/* export const filterCompletedTodos = (id) => {
-  type: FILTER_COMPLETED_TODOS
-  payload: {id}
-}
-
-export const filterAllTodos = () => {
-  type: FILTER_COMPLETED_TODOS
-} */
 export const addTodo = (text) => ({
   type: ADD_TODO,
   payload: { text }, //creating an object with text property, so that I can expand potentially in the future i.e { text, priority, dueDate }
