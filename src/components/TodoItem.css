@@ -28,6 +28,7 @@
 
   .todo-text {
     flex-grow: 1; /* Ensures the text takes available space */
+    text-align: left;
     margin: 0 10px;
     white-space: nowrap; /* Prevents text from breaking into multiple lines */
     overflow: hidden; /* Hides any overflow text */
