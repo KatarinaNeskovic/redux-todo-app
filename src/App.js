@@ -2,10 +2,10 @@ import React from "react";
 import { TodoList } from "./components/todo-list";
 import { AddTodo }  from "./components/add-todo";
 import "./App.css";
-import Filter from "./components/Filter";
+import {Filter} from './components/filter';
 
 function App() {
-  return (
+  return (   
     <div className="App">
       <h1>Todo List</h1>
       <div className="todo-container">

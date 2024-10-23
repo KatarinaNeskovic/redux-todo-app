@@ -1,7 +1,5 @@
 import React from "react";
-import "./Filter.css";
-import { setFilter } from "../store/actions";
-import { connect } from "react-redux";
+import "./filter.css";
 
 const Filter = ({ setFilter }) => {
   const handleFilterChange = (e) => {
@@ -18,8 +16,6 @@ const Filter = ({ setFilter }) => {
   );
 };
 
-const mapDispatchToProps = {
-  setFilter,
-};
 
-export default connect(null, mapDispatchToProps)(Filter);
+
+export {Filter}
