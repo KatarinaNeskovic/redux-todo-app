@@ -3,7 +3,8 @@ import { connect } from "react-redux";
 import { clearAllTodos } from "../../store/actions";
 import "./TodoList.css";
 import { selectFilteredTodos } from "../../store/selectors";
-import { TodoList } from ".";
+import { TodoList } from "./TodoList";
+
 
 const mapStateToProps = (state) => ({
   todos: selectFilteredTodos(state.todos, state.filter), // return value of selector function becomes todos prop for this component
