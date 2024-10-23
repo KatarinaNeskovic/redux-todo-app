@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import TodoItem from "../TodoItem";
 import { clearAllTodos } from "../../store/actions";
 import "./TodoList.css";
 import { selectFilteredTodos } from "../../store/selectors";
