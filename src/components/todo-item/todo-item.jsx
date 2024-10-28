@@ -79,4 +79,6 @@ const TodoItem = ({ todo, toggleTodo, editTodo, deleteTodo }) => {
   );
 };
 
-export {TodoItem}
+export default TodoItem 
+//notice the difference and use/lack thereof in export syntax here and in TodoList,
+// both are correct but not 
