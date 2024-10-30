@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { addTodo } from "../../ducks/actions";
+import { addTodo } from "../../ducks/todo-duck";
 import "./add-todo.css";
 import { AddTodo } from "./add-todo";
 

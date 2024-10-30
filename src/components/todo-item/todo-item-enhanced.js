@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { toggleTodo, editTodo, deleteTodo } from "../../ducks/actions";
+import { toggleTodo, editTodo, deleteTodo } from "../../ducks/todo-duck";
 import TodoItem from "./todo-item";
 import "./todo-item.css";
 

@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { setFilter } from "../../ducks/actions";
+import { setFilter } from "../../ducks/filter-duck";
 import "./filter.css";
 import { Filter } from "./filter";
 

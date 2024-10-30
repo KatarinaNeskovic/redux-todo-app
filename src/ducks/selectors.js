@@ -1,4 +1,10 @@
-export const selectFilteredTodos = (todos, filter) => {
+import { todosSelector } from "./todo-duck";
+import { filterSelector } from "./filter-duck";
+import { createSelector } from 'reselect';
+
+
+export const filteredTodosSelector = createSelector (
+  [todosSelector, filterSelector], (todos,filter) => {
   switch (filter) {
     case "SHOW_COMPLETED":
       return todos.filter((todo) => todo.completed);
@@ -8,5 +14,9 @@ export const selectFilteredTodos = (todos, filter) => {
 
     case "SHOW_ACTIVE":
       return todos.filter((todo) => !todo.completed);
+
+      default: 
+      return todos
   }
-};
+}
+);

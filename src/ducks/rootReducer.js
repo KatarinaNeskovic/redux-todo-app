@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import todoReducer from './todoReducers' 
-import  {filterReducer}  from './filterReducer'
+import {todoReducer} from './todo-duck' 
+import  {filterReducer}  from './filter-duck'
 
 const rootReducer = combineReducers ({
     todos: todoReducer,

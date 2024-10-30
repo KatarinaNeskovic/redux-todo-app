@@ -1,12 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
-import { clearAllTodos } from "../../ducks/actions";
+import { clearAllTodos } from "../../ducks/todo-duck";
 import "./todo-list.css";
-import { selectFilteredTodos } from "../../ducks/selectors";
+import { filteredTodosSelector } from "../../ducks/selectors";
 import { TodoList } from "./todo-list";
 
 const mapStateToProps = (state) => ({
-  todos: selectFilteredTodos(state.todos, state.filter), // return value of selector function becomes todos prop for this component
+  todos: filteredTodosSelector(state), // return value of selector function becomes todos prop for this component
 });
 
 const mapDispatchToProps = {
