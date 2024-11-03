@@ -4,13 +4,13 @@
 import { actionType } from "./action-type";
 import { v4 as uuidv4 } from "uuid";
 
-
 // -------------------------------------------------------------------------------------------------
 export const ADD_TODO = actionType("ADD_TODO");
 export const TOGGLE_TODO = actionType("TOGGLE_TODO");
 export const EDIT_TODO = actionType("EDIT_TODO");
 export const DELETE_TODO = actionType("DELETE_TODO");
 export const CLEAR_ALL_TODOS = actionType("CLEAR_ALL_TODOS");
+export const SET_TODOS = actionType("SET_TODOS");
 
 // -------------------------------------------------------------------------------------------------
 // Action creators
@@ -40,6 +40,11 @@ export const clearAllTodos = () => ({
   type: CLEAR_ALL_TODOS,
 });
 
+export const setTodos = () => ({
+  type: SET_TODOS,
+  payload: { todos },
+});
+
 // -------------------------------------------------------------------------------------------------
 // Reducer
 // -------------------------------------------------------------------------------------------------
@@ -48,6 +53,10 @@ const initialState = []; //array of todos
 
 export function todoReducer(state = initialState, action) {
   switch (action.type) {
+    //This means that when the SET_TODOS action is dispatched, the reducer is using the todos data provided by the action itself.
+    case SET_TODOS:
+      return action.payload.todos
+
     case ADD_TODO:
       return [
         ...state,
