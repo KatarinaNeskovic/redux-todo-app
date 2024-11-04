@@ -12,6 +12,7 @@ export const DELETE_TODO = actionType("DELETE_TODO");
 export const CLEAR_ALL_TODOS = actionType("CLEAR_ALL_TODOS");
 export const SET_TODOS = actionType("SET_TODOS");
 
+
 // -------------------------------------------------------------------------------------------------
 // Action creators
 // -------------------------------------------------------------------------------------------------
@@ -40,7 +41,7 @@ export const clearAllTodos = () => ({
   type: CLEAR_ALL_TODOS,
 });
 
-export const setTodos = () => ({
+export const setTodos = (todos) => ({
   type: SET_TODOS,
   payload: { todos },
 });
