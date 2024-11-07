@@ -9,13 +9,15 @@ import {
   TOGGLE_TODO,
 } from "./todo-duck";
 
-//function to load cookies on application start
+
 
 /* function* loadTodosfromCookies () {
     const todos = Cookies.getJSON('todos') || []
     yield put (setTodos(todos))
 } */
 
+
+//handler saga to load cookies on application start
 function* loadTodosfromCookies() {
   try {
     console.log ('enter loadTodosfromCookies')
@@ -30,7 +32,7 @@ function* loadTodosfromCookies() {
   }
 }
 
-// Function to save todos to cookies
+// handler saga to save todos to cookies
 function* saveTodosToCookies() {
   const todos = yield select((state) => state.todos);
   const todosStr = JSON.stringify(todos);
@@ -51,11 +53,6 @@ function* watchSaveTodos() {
   );
 }
 
-// Root saga that combines all sagas
-/* export default function* rootSaga() {
-    yield watchLoadTodos();
-    yield watchSaveTodos();
-  } */
 
 export default function* rootSaga() {
   yield all([watchLoadTodos(), watchSaveTodos()]);
