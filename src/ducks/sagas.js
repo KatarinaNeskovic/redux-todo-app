@@ -34,7 +34,7 @@ function* loadTodosfromCookies() {
 
 // handler saga to save todos to cookies
 function* saveTodosToCookies() {
-  const todos = yield select((state) => state.todos);
+  const todos = yield select((state) => state.todos); 
   const todosStr = JSON.stringify(todos);
   Cookies.set("todos", todosStr, { expires: 7 }); // Set cookie to expire in 7 days
   console.log("Saving Todos to Cookies:", todosStr);
