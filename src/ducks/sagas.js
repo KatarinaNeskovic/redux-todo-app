@@ -1,4 +1,4 @@
-import { put, select, takeLatest, takeEvery, all } from "redux-saga/effects";
+import { put, select, takeEvery, all } from "redux-saga/effects";
 import Cookies from "js-cookie";
 import { setTodos } from "./todo-duck";
 import {
@@ -9,18 +9,10 @@ import {
   TOGGLE_TODO,
 } from "./todo-duck";
 
-
-
-/* function* loadTodosfromCookies () {
-    const todos = Cookies.getJSON('todos') || []
-    yield put (setTodos(todos))
-} */
-
-
 //handler saga to load cookies on application start
 function* loadTodosfromCookies() {
   try {
-    console.log ('enter loadTodosfromCookies')
+    /*     console.log ('enter loadTodosfromCookies') */
     const todosStr = Cookies.get("todos"); // Get todos from cookies as a string
     if (typeof todosStr === "string") {
       const todos = todosStr ? JSON.parse(todosStr) : []; // Parse the JSON string if it exists
@@ -34,10 +26,14 @@ function* loadTodosfromCookies() {
 
 // handler saga to save todos to cookies
 function* saveTodosToCookies() {
-  const todos = yield select((state) => state.todos); 
-  const todosStr = JSON.stringify(todos);
-  Cookies.set("todos", todosStr, { expires: 7 }); // Set cookie to expire in 7 days
-  console.log("Saving Todos to Cookies:", todosStr);
+  try {
+    const todos = yield select((state) => state.todos);
+    const todosStr = JSON.stringify(todos);
+    Cookies.set("todos", todosStr, { expires: 7 }); // Set cookie to expire in 7 days
+    /*   console.log("Saving Todos to Cookies:", todosStr); */
+  } catch (error) {
+    console.error("Error saving todos to cookies:", error);
+  }
 }
 
 // Watcher saga to load todos from cookies when the application starts
@@ -52,7 +48,6 @@ function* watchSaveTodos() {
     saveTodosToCookies
   );
 }
-
 
 export default function* rootSaga() {
   yield all([watchLoadTodos(), watchSaveTodos()]);
