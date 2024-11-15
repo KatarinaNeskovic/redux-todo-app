@@ -8,7 +8,7 @@ import store from "./ducks/store";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 store.dispatch({ type: "LOAD_TODOS_FROM_COOKIES" });
 /* simultaneously creating an action object with a type property and dispatching this action on app load. 
-In Redux, you can dispatch any action with a type string, even if it hasn't been explicitly defined as an action creator or constant. 
+In Redux, any action can be dispatched with a type string (payload if I need it), even if it hasn't been explicitly defined as an action creator or constant. 
  */
 console.log("dispatch loadTodos");
 root.render(
